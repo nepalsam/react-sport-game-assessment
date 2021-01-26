@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Ohiologo from './Assets/image/ohio_state_buckeyes.png';
+import GeorgiaLogo from './Assets/image/georgia-state-university-logo.png';
+import washingtonLogo from './Assets/image/Washington-State-University-Pullman-472B0937.jpg';
+import FloridaLogo from './Assets/image/florida-state-university-62.jpeg';
+import Game from './component/game/Game.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+  function App(props) {
+    const Ohio = {
+      name: 'ohio State ',
+      logoSrc: Ohiologo
+    }
+  
+    const Georgia = {
+      name: 'Georgia State',
+      logoSrc: GeorgiaLogo
+    }
+  
+    const washington = {
+      name: 'Washington State',
+      logoSrc: washingtonLogo
+    }
+  
+    const Florida = {
+      name: 'Florida State',
+      logoSrc: FloridaLogo
+    }
+  
+    return (
+      <div className="App">
+        <Game
+          venue="Ohio State Studiom"
+          homeTeam={Ohio}
+          visitingTeam={Georgia}
+        />
+        <Game
+          venue="Apple Studiom"
+          homeTeam={washington}
+          visitingTeam={Florida}
+        />
+      </div>
+    )
+  }
+
 
 export default App;
